@@ -1,5 +1,5 @@
 {% set name = "diffpy.cmi" %}
-{% set version = "0.0.1" %}
+{% set version = "3.1.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/d/diffpy_cmi/diffpy_cmi-0.0.1.tar.gz
-  sha256: 4ded89791626dbc4516a82bde8dec54e6d16e5b9e2d5c8dbd8d1e26b51cfb099
+  url: https://pypi.org/packages/source/d/diffpy_cmi/diffpy_cmi-3.1.1.tar.gz
+  sha256: ab4e902414b94a34c3442882448caff575043f3fab8b81e4a572c6ca4a6e67cd
 
 build:
   noarch: python
@@ -29,6 +29,9 @@ requirements:
     - python >={{ python_min }}
     - numpy
     - scipy
+    - packaging
+    - pyyaml
+    - requests # remove when print info test is fixed
     - matplotlib-base
     - diffpy.structure
     - diffpy.utils
@@ -38,14 +41,15 @@ requirements:
     - periodictable
     - libdiffpy
     - diffpy.srreal
-
 test:
   requires:
     - python {{ python_min }}
     - pip
     - pytest
+
   source_files:
     - tests
+
   commands:
     - pip check
     - pytest
@@ -57,7 +61,7 @@ about:
   license_family: BSD
   license_file: LICENSE.rst
   description: |
-    DiffPy.CMI is designed as an extensible complex modeling infrastructure. Users and developers can readily integrate novel data types and constraints into custom workflows. While widely used for advanced analysis of structural data, the framework is general and can be applied to any problem where model parameters are refined to fit calculated quantities to data.DiffPy.CMI is a community-driven project that supports Unix, Linux, macOS, and Windows platforms. It is designed to be used in Python scripts enabling flexible scripting and automation for advanced and reproducible workflows. Users are encouraged to leverage the software for their modeling needs and to contribute feedback, use cases, and extensions through the project community.
+    Welcome to diffpy.cmi, a complex modeling infrastructure for multi-modal analysis of scientific data. Diffpy.cmi is designed as an extensible complex modeling infrastructure. Users and developers can readily integrate novel data types and constraints into custom workflows. While widely used for advanced analysis of structural data, the framework is general and can be applied to any problem where model parameters are refined to fit calculated quantities to data. Diffpy.cmi is comprised of modular units called 'packs' and 'profiles' that facilitate tailored installations for specific scientific applications.
   doc_url: http://diffpy.cmi.github.io/diffpy.cmi/
   dev_url: https://github.com/diffpy.cmi/diffpy.cmi/
 
