@@ -1,5 +1,5 @@
 {% set name = "diffpy.cmi" %}
-{% set version = "0.0.1" %}
+{% set version = "3.1.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/d/diffpy_cmi/diffpy_cmi-0.0.1.tar.gz
-  sha256: 4ded89791626dbc4516a82bde8dec54e6d16e5b9e2d5c8dbd8d1e26b51cfb099
+  url: https://pypi.org/packages/source/d/diffpy_cmi/diffpy_cmi-{{ version }}.tar.gz
+  sha256: ab4e902414b94a34c3442882448caff575043f3fab8b81e4a572c6ca4a6e67cd
 
 build:
   noarch: python
