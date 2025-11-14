@@ -12,11 +12,11 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
   entry_points:
-    - diffpy-cmi = diffpy.cmi.diffpy_cmi_app:main
-    - cmi = diffpy.cmi.diffpy_cmi_app:main
+    - diffpy.cmi = diffpy.cmi.cli:main
+    - cmi = diffpy.cmi.cli:main
 
 requirements:
   host:
